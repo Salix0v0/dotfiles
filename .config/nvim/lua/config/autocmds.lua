@@ -1,0 +1,21 @@
+-- Autocmds are automatically loaded on the VeryLazy event
+-- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
+--
+-- Add any additional autocmds here
+-- with `vim.api.nvim_create_autocmd`
+--
+-- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
+-- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+-- ~/.config/nvim/lua/config/autocmds.lua 末尾追加
+-- require('base16-colorscheme').setup({
+--     base00 = '#333333', base01 = '#da2700', base02 = '#12c258', base03 = '#ffc656',
+--     base04 = '#518bfc', base05 = '#e37bd9', base06 = '#63fad5', base07 = '#bab2b2',
+--     base08 = '#777777', base09 = '#ffb9b9', base0A = '#e3f6aa', base0B = '#ffddaa',
+--     base0C = '#b3e8f3', base0D = '#cbbaf9', base0E = '#bcffc7', base0F = '#efefef',
+-- })
+-- 先进行配置
+-- require('vscode').setup({
+--     transparent = true,      -- 开启透明背景
+--     italic_comments = true,  -- 注释斜体（可选）
+--     underline_links = true,  -- 链接下划线（可选）
+-- })

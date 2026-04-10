@@ -1,0 +1,91 @@
+return {
+	{
+		"RRethy/base16-nvim",
+		priority = 1000,
+		config = function()
+			require('base16-colorscheme').setup({
+				base00 = '#201F1E',
+				base01 = '#201F1E',
+				base02 = '#9398a3',
+				base03 = '#9398a3',
+				base04 = '#eaf1ff',
+				base05 = '#f6f9ff',
+				base06 = '#f6f9ff',
+				base07 = '#f6f9ff',
+				base08 = '#ff7da1',
+				base09 = '#ff7da1',
+				base0A = '#6b9dff',
+				base0B = '#85ff97',
+				base0C = '#b1cbff',
+				base0D = '#6b9dff',
+				base0E = '#85aeff',
+				base0F = '#85aeff',
+			})
+
+			vim.api.nvim_set_hl(0, 'Visual', {
+				bg = '#9398a3',
+				fg = '#f6f9ff',
+				bold = true
+			})
+			vim.api.nvim_set_hl(0, 'Statusline', {
+				bg = '#6b9dff',
+				fg = '#201F1E',
+			})
+			vim.api.nvim_set_hl(0, 'LineNr', { fg = '#9398a3' })
+			vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#b1cbff', bold = true })
+
+			vim.api.nvim_set_hl(0, 'Statement', {
+				fg = '#85aeff',
+				bold = true
+			})
+			vim.api.nvim_set_hl(0, 'Keyword', { link = 'Statement' })
+			vim.api.nvim_set_hl(0, 'Repeat', { link = 'Statement' })
+			vim.api.nvim_set_hl(0, 'Conditional', { link = 'Statement' })
+
+			vim.api.nvim_set_hl(0, 'Function', {
+				fg = '#6b9dff',
+				bold = true
+			})
+			vim.api.nvim_set_hl(0, 'Macro', {
+				fg = '#6b9dff',
+				italic = true
+			})
+			vim.api.nvim_set_hl(0, '@function.macro', { link = 'Macro' })
+
+			vim.api.nvim_set_hl(0, 'Type', {
+				fg = '#b1cbff',
+				bold = true,
+				italic = true
+			})
+			vim.api.nvim_set_hl(0, 'Structure', { link = 'Type' })
+
+			vim.api.nvim_set_hl(0, 'String', {
+				fg = '#85ff97',
+				italic = true
+			})
+
+			vim.api.nvim_set_hl(0, 'Operator', { fg = '#eaf1ff' })
+			vim.api.nvim_set_hl(0, 'Delimiter', { fg = '#eaf1ff' })
+			vim.api.nvim_set_hl(0, '@punctuation.bracket', { link = 'Delimiter' })
+			vim.api.nvim_set_hl(0, '@punctuation.delimiter', { link = 'Delimiter' })
+
+			vim.api.nvim_set_hl(0, 'Comment', {
+				fg = '#9398a3',
+				italic = true
+			})
+
+			local current_file_path = vim.fn.stdpath("config") .. "/lua/plugins/dankcolors.lua"
+			if not _G._matugen_theme_watcher then
+				local uv = vim.uv or vim.loop
+				_G._matugen_theme_watcher = uv.new_fs_event()
+				_G._matugen_theme_watcher:start(current_file_path, {}, vim.schedule_wrap(function()
+					local new_spec = dofile(current_file_path)
+					if new_spec and new_spec[1] and new_spec[1].config then
+						new_spec[1].config()
+						print("Theme reload")
+					end
+				end))
+			end
+		end
+	}
+}

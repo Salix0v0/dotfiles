@@ -1,0 +1,12 @@
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  opts = {
+    filesystem = {
+      filtered_items = {
+        visible = true,       -- 隐藏文件可见（灰色显示）
+        hide_dotfiles = false, -- 不隐藏 dotfiles
+        hide_gitignored = false, -- 不隐藏 .gitignore 中的文件
+      },
+    },
+  },
+}

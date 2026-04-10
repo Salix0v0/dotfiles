@@ -1,0 +1,6 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export EDITOR:nvim
+SETUVAR __fish_initialized:4300
+SETUVAR fish_user_paths:/opt/miniconda3/condabin\x1e/home/salix/\x2elocal/share/npm/bin\x1e/home/salix/\x2elocal/bin
+SETUVAR theme_nerd_fonts:yes
