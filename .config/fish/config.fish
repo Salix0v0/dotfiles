@@ -29,5 +29,6 @@ end
 
 # uv
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lazydot='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 fish_add_path "/home/salix/.local/bin"
 fish_add_path "/home/salix/.local/share/npm/bin"
