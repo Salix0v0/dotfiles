@@ -17,11 +17,11 @@ echo "📦 1. 安装基础依赖..."
 apt update
 apt install -y git curl
 echo "📥 2. 克隆 Dotfiles..."
-if ! command -v git &>/dev/null; then
-  echo "❌ 错误: 未找到 Git，请先安装 Git。"
-  exit 1
-fi
-
+# if ! command -v git &>/dev/null; then
+#   echo "❌ 错误: 未找到 Git，请先安装 Git。"
+#   exit 1
+# fi
+#
 # 2. 将 .dotfiles 添加到系统的 .gitignore 中，防止递归问题
 grep -qxF '.dotfiles' "$HOME/.gitignore" || echo ".dotfiles" >>"$HOME/.gitignore"
 # 3. 克隆裸仓库到本地
