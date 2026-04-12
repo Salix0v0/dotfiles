@@ -16,6 +16,7 @@ BACKUP_DIR="$HOME/.dotfiles-backup"
 echo "📦 1. 安装基础依赖..."
 apt update
 apt install -y git curl
+apt install -y software-properties-common
 echo "📥 2. 克隆 Dotfiles..."
 # if ! command -v git &>/dev/null; then
 #   echo "❌ 错误: 未找到 Git，请先安装 Git。"
@@ -57,7 +58,7 @@ echo "🛠️ 3. 安装核心生产力工具..."
 
 # 安装 Neovim (注意：LazyVim 需要 Neovim >= 0.9.0)
 # Ubuntu 默认源的 nvim 可能太老，建议通过 PPA 或直接下载二进制文件
-apt-add-repository ppa:fish-shell/release-4
+add-apt-repository ppa:fish-shell/release-4
 add-apt-repository ppa:neovim-ppa/unstable -y
 apt update
 apt install -y fish
