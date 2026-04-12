@@ -4,7 +4,7 @@ set -e
 # 用户自定义配置区
 # ==========================================
 # 替换为你的 GitHub/GitLab 仓库地址 (推荐在新电脑上先配置好 SSH 密钥，或者用 HTTPS 地址)
-REPO_URL="git@github.com:Salix0v0/dotfiles.git"
+REPO_URL="https://github.com/Salix0v0/dotfiles.git"
 # 定义裸仓库的存放路径
 DOTFILES_DIR="$HOME/.dotfiles"
 # 定义冲突文件的备份路径
