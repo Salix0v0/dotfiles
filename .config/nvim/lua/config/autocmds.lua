@@ -19,3 +19,13 @@
 --     italic_comments = true,  -- 注释斜体（可选）
 --     underline_links = true,  -- 链接下划线（可选）
 -- })
+-- -- 当退出插入模式、失去焦点或离开缓冲区时自动保存
+vim.api.nvim_create_autocmd({ "InsertLeave", "FocusLost", "BufLeave" }, {
+  desc = "Auto save file",
+  callback = function()
+    -- 检查当前 buffer 是否被修改过、是否只读、是否有文件名，以及是否是普通文件类型
+    if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+      vim.cmd("silent! w")
+    end
+  end,
+})

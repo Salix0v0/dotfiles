@@ -1,51 +1,54 @@
 return {
-  -- 安装两个主题
---   { "mhinz/vim-janah",
---     -- init = function()
---     -- vim.api.nvim_create_autocmd("ColorScheme", {
---     --   pattern = "*",
---     --   callback = function()
---     --     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
---     --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
---     --     vim.api.nvim_set_hl(0, "NormalNC",    { bg = "none" })
---     --     vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
---     --     vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+  -- 安装 vscode.nvim
+  {
+    "Mofiqul/vscode.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      local c = require("vscode.colors").get_colors()
 
---     --     vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
---     --     vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
---     --     vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
---     --   end,
---     -- })
---   -- end
--- },
---   {"KabbAmine/yowish.vim"},
---   -- {"RRethy/base16-nvim"},
---   {"ellisonleao/gruvbox.nvim"},
+      require("vscode").setup({
+        -- 主题风格：'dark' 或 'light'
+        -- style = 'dark',
 
---   {"folke/tokyonight.nvim",
--- opts = {
---       transparent = true, -- 开启主体透明背景
---       styles = {
---         sidebars = "transparent", -- 让侧边栏（如 neo-tree）也透明
---         floats = "transparent",   -- 让浮动窗口（如 which-key, 弹窗）也透明
---       },
---     }},
---   {
---     "catppuccin/nvim",
---     name = "catppuccin",
---     opts = {
---       transparent_background = true, -- 开启透明背景
---     },
---   },
---   {"rebelot/kanagawa.nvim"},
---   {"EdenEast/nightfox.nvim"},
-  {'Mofiqul/vscode.nvim'},
-  -- 设置默认主题（改成任意一个即可）
+        -- ✅ 开启透明背景（保持终端背景色）
+        transparent = true,
+
+        -- 开启斜体注释
+        italic_comments = false,
+
+        -- 开启斜体 inlay hints
+        italic_inlayhints = true,
+
+        -- 链接下划线
+        underline_links = true,
+
+        -- 禁用 nvim-tree 的背景色（透明时建议开启）
+        disable_nvimtree_bg = true,
+
+        -- 将主题色应用到终端
+        terminal_colors = false,
+
+        -- 覆盖颜色（可选）
+        -- color_overrides = {
+        --   vscLineNumber = '#FFFFFF',
+        -- },
+
+        -- 覆盖高亮组（可选）
+        -- group_overrides = {
+        --   Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+        -- },
+      })
+
+      vim.cmd.colorscheme("vscode")
+    end,
+  },
+
+  -- 告诉 LazyVim 使用这个主题
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vscode", -- 或 "yowish"
+      colorscheme = "vscode",
     },
   },
-
 }
