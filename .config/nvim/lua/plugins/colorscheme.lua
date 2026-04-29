@@ -39,8 +39,19 @@ return {
         --   Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
         -- },
       })
-
       vim.cmd.colorscheme("vscode")
+
+      -- -- 区分激活窗口
+      -- vim.api.nvim_set_hl(0, "NormalNC", { bg = "#141414" })
+      -- vim.api.nvim_set_hl(0, "LineNrNC", { bg = "#141414", fg = "#4a4a4a" })
+      -- vim.api.nvim_set_hl(0, "SignColumnNC", { bg = "#141414" })
+      -- vim.api.nvim_set_hl(0, "EndOfBufferNC", { bg = "#141414" })
+      -- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#007acc", bold = true })
+      --
+      -- -- CursorLine 必须放在 colorscheme 之后
+      -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2a2d2e" })
+      -- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff", bg = "#2a2d2e", bold = true })
+      -- vim.cmd.colorscheme("vscode")
     end,
   },
 
