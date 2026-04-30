@@ -14,7 +14,7 @@
 
 vim.opt.scrolloff = 0     -- 上下保留行数（默认8），改小
 vim.opt.sidescrolloff = 0 -- 左右保留列数
-
+vim.opt.spelllang = { "en_us", "cjk" }
 vim.g.suda_smart_edit = 1
 vim.o.winborder = "rounded"
 -- 可选: "single" | "double" | "rounded" | "solid"
