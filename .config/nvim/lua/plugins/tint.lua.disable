@@ -1,0 +1,21 @@
+-- ~/.config/nvim/lua/plugins/tint.lua
+return {
+  "levouh/tint.nvim",
+  event = "VeryLazy",
+  opts = {
+    tint = -45,
+    saturation = 0.6,
+    tint_background_colors = true,
+    highlight_ignore_patterns = {
+      "WinSeparator",
+      "Status.*",
+      "Neo[Tt]ree.*",
+    },
+    window_ignore_function = function(winid)
+      local bufid = vim.api.nvim_win_get_buf(winid)
+      local buftype = vim.api.nvim_get_option_value("buftype", { buf = bufid })
+      local floating = vim.api.nvim_win_get_config(winid).relative ~= ""
+      return buftype == "terminal" or floating
+    end,
+  },
+}
