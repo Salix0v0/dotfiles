@@ -44,6 +44,7 @@ return {
               keys = {
                 ["x"] = "my_cut",
                 ["y"] = "my_yank",
+                ["c"] = "explorer_yank",
                 ["p"] = "my_paste",
                 ["v"] = "my_select",
                 ["V"] = "my_select",
