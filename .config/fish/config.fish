@@ -19,8 +19,8 @@ bind -M visual y 'fish_clipboard_copy; commandline -f end-selection repaint-mode
 # 绑定 p 从系统剪贴板粘贴（normal 模式）
 bind -M normal p fish_clipboard_paste
 bind -M visual p fish_clipboard_paste
-fish_add_path "/home/salix/.local/bin"
-fish_add_path "/home/salix/.local/share/npm/bin"
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.local/share/npm/bin"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lazydot='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
