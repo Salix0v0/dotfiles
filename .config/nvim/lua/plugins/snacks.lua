@@ -3,6 +3,9 @@ return {
   opts = {
     image = {},
     statuscolumn = { enabled = true },
+    explorer = {
+      trash = false,
+    },
     picker = {
       sources = {
         explorer = {
@@ -49,7 +52,7 @@ return {
                 ["v"] = "my_select",
                 ["V"] = "my_select",
                 ["h"] = "explorer_up",
-                ["l"] = "explorer_focus"
+                ["l"] = "explorer_focus",
               },
             },
           },
