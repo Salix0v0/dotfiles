@@ -4,7 +4,7 @@ return {
     opts = {
       servers = {
         pyright = { enabled = false }, -- 关掉默认那个
-        basedpyright = {},             -- 打开替代品
+        basedpyright = { enabled = true }, -- 打开替代品
       },
     },
   },
