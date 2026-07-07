@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged", "FocusLost", "BufLea
       if vim.fn.bufname():match("%.ipynb$") then
         return
       end
-      print("autosave")
+      -- print("autosave")
       vim.cmd("w")
     end
   end,
