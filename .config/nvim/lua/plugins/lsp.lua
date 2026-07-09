@@ -4,7 +4,8 @@ return {
     opts = {
       servers = {
         pyright = { enabled = false }, -- 关掉默认那个
-        basedpyright = { enabled = true }, -- 打开替代品
+        basedpyright = { enabled = false }, -- 打开替代品
+        pyrefly = { enabled = true },
       },
     },
   },
