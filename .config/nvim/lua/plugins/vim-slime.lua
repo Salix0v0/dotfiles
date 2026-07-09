@@ -5,6 +5,7 @@ return {
 
     vim.g.slime_default_config = {
       socket_name = "default",
+      target_pane = "{marked}",
     }
 
     vim.g.slime_dont_ask_default = 1
